@@ -1,9 +1,18 @@
 import sys
+sys.modules["lox"] = sys.modules[__name__]
+
 from scanner import Scanner
+from parser import Parser
+from interpreter import Interpreter
+from resolver import Resolver
+from token_type import TokenType
 
 
 class Lox:
+    interpreter = Interpreter()
+
     had_error = False
+    had_runtime_error = False
 
     @staticmethod
     def main():
@@ -27,6 +36,9 @@ class Lox:
         if Lox.had_error:
             sys.exit(65)
 
+        if Lox.had_runtime_error:
+            sys.exit(70)
+
     @staticmethod
     def run_prompt():
         while True:
@@ -42,12 +54,35 @@ class Lox:
         scanner = Scanner(source)
         tokens = scanner.scan_tokens()
 
-        for token in tokens:
-            print(token)
+        parser = Parser(tokens)
+        statements = parser.parse()
+
+        if Lox.had_error:
+            return
+
+        resolver = Resolver(Lox.interpreter)
+        resolver.resolve(statements)
+
+        if Lox.had_error:
+            return
+
+        Lox.interpreter.interpret(statements)
 
     @staticmethod
     def error(line: int, message: str):
         Lox.report(line, "", message)
+
+    @staticmethod
+    def token_error(token, message: str):
+        if token.type == TokenType.EOF:
+            Lox.report(token.line, " at end", message)
+        else:
+            Lox.report(token.line, f" at '{token.lexeme}'", message)
+
+    @staticmethod
+    def runtime_error(error):
+        print(f"{error}\n[line {error.token.line}]", file=sys.stderr)
+        Lox.had_runtime_error = True
 
     @staticmethod
     def report(line: int, where: str, message: str):
