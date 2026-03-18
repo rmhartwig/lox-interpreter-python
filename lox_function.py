@@ -1,3 +1,5 @@
+# Represents a Lox function or method.
+# Handles closures, parameter binding, and function calls.
 from environment import Environment
 from lox_callable import LoxCallable
 from return_exception import ReturnException

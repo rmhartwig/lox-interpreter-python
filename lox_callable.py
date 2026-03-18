@@ -1,3 +1,5 @@
+# Interface for callable objects (functions, classes, native functions).
+# Defines arity() and call() methods used by the interpreter.
 from __future__ import annotations
 
 from abc import ABC, abstractmethod

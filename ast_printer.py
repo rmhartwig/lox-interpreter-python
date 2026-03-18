@@ -1,3 +1,5 @@
+# Debug utility that prints AST nodes in a readable format.
+# Useful for verifying parser output.
 from expr import ExprVisitor, Binary, Grouping, Literal, Unary, Variable, Assign
 
 

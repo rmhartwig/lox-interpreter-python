@@ -1,3 +1,5 @@
+# Represents a scope (variable environment).
+# Stores variables and supports nested scopes via chaining.
 class Environment:
     def __init__(self, enclosing=None):
         self.enclosing = enclosing

@@ -1,3 +1,5 @@
+# Defines all statement AST node types and the visitor interface.
+# Statements represent executable units like print, var, if, while, etc.
 from __future__ import annotations
 
 from abc import ABC, abstractmethod

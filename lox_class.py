@@ -1,3 +1,5 @@
+# Represents a Lox class at runtime.
+# Handles method lookup and supports inheritance via superclass chaining.
 from lox_callable import LoxCallable
 from lox_instance import LoxInstance
 

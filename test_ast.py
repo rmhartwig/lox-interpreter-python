@@ -1,3 +1,5 @@
+# Simple test file for building and printing ASTs.
+# Helps verify parsing and AST structure.
 from ast_printer import AstPrinter
 from expr import Binary, Grouping, Literal, Unary
 from lox_token import Token

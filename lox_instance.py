@@ -1,3 +1,5 @@
+# Represents an instance of a class.
+# Stores fields and handles property access and method binding.
 class LoxInstance:
     def __init__(self, klass):
         self.klass = klass

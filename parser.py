@@ -1,3 +1,5 @@
+# Recursive descent parser that turns tokens into an AST.
+# Implements the grammar rules for the Lox language.
 from token_type import TokenType
 from expr import (
     Binary,

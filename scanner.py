@@ -1,3 +1,5 @@
+# Converts raw source code into a list of tokens.
+# This is the lexer phase of the interpreter.
 from token_type import TokenType
 from lox_token import Token
 

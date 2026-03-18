@@ -1,3 +1,5 @@
+# Walks the AST and executes the program.
+# Uses the visitor pattern to evaluate expressions and run statements.
 import time
 
 from expr import (

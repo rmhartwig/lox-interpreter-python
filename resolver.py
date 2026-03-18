@@ -1,3 +1,6 @@
+# Performs static analysis before execution.
+# Determines how many scopes away each variable
+# is so the interpreter can resolve variables efficiently.
 from enum import Enum, auto
 
 

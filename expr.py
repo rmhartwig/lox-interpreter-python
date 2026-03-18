@@ -1,3 +1,5 @@
+# Defines all expression AST node types and the visitor interface.
+# Each class represents a different kind of expression in Lox.
 from __future__ import annotations
 
 from abc import ABC, abstractmethod

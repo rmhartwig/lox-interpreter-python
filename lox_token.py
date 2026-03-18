@@ -1,3 +1,5 @@
+# Represents a single token produced by the scanner.
+# Stores type, lexeme, literal value, and line number.
 from dataclasses import dataclass
 from typing import Any
 from token_type import TokenType

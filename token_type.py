@@ -1,3 +1,5 @@
+# Enum defining all token types in the Lox language.
+# Used by the scanner and parser.
 from enum import Enum, auto
 
 

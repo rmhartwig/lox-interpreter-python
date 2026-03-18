@@ -1,3 +1,6 @@
+# Entry point for the interpreter.
+# Handles running files or starting the REPL,
+# and coordinates scanning → parsing → resolving → interpreting.
 import sys
 sys.modules["lox"] = sys.modules[__name__]
 
